@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h3 class="border_title">Por enviar:</h3>
+<p>
+    <% @pushs.each do |push| %>
+        <p>
+          <%= push.text %> <%= push.url %>
+          <%= button_to "Send", :action => "post_sends" %>
+        </p>
+      <br>
+    <% end %>
+</p>

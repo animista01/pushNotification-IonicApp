@@ -1,0 +1,25 @@
+<h1>Listing push_senders</h1>
+
+<table>
+  <tr>
+    <th>Text</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @push_senders.each do |push_sender| %>
+  <tr>
+    <td><%= push_sender.text %></td>
+    <td><%= push_sender.url %></td>
+    <td><%= link_to 'Show', push_sender %></td>
+    <td><%= link_to 'Edit', edit_push_sender_path(push_sender) %></td>
+    <td><%= link_to 'Destroy', push_sender, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Push sender', new_push_sender_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @push_sender.text %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @push_sender.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_push_sender_path(@push_sender) %> |
+<%= link_to 'Back', push_senders_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@push_sender) do |f| %>
+  <% if @push_sender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@push_sender.errors.count, "error") %> prohibited this push_sender from being saved:</h2>
+
+      <ul>
+      <% @push_sender.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
