@@ -33,17 +33,26 @@ angular.module('starter', ['ionic', 'ngCordova'])
 })
 function onNotificationGCM (e) {
   switch( e.event ){
+    
     case 'registered':
       if ( e.regid.length > 0 )
       {
         console.log("Regid " + e.regid);
         alert('registration id = '+e.regid);
+
       }
     break;
 
     case 'message':
+      if (e.foreground) {
+        alert('FOREGROUND MSG:' + JSON.stringify(e));
+      } else if (e.coldstart) {
+        alert('COLDSTART MSG:' + JSON.stringify(e));
+      } else {
+        alert('BACKGROUND:' + JSON.stringify(e));
+      }
         // this is the actual push notification. its format depends on the data model from the push server
-      alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+      alert('message = '+e.message+' url = '+e.url);
     break;
 
     case 'error':

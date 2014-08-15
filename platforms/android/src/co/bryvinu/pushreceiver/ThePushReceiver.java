@@ -17,12 +17,12 @@
        under the License.
  */
 
-package com.ionicframework.starter;
+package co.bryvinu.pushreceiver;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class HelloCordova extends CordovaActivity 
+public class ThePushReceiver extends CordovaActivity 
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

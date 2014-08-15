@@ -98,7 +98,7 @@ class PushSendersController < ApplicationController
     #  - all options are pass to HTTParty method arguments
     #  - ref: https://github.com/jnunemaker/httparty/blob/master/lib/httparty.rb#L40-L68
     #  gcm = GCM.new(api_key, timeout: 3)
-    registration_ids = ["APA91bEtqE09wU3awSZWg2-2A5BJqCfKUNLKXObOlEeq4CHlS-Eu_vLzp5GZAuFCWl1kFBfmgfbxSdu2XzsBZIJcYUc9IzDcfMAGyBRDK-0xPL50vz9P1ZEtCLayGqwlBuyOdQpxcz_Sgbi-E9DWfG8QLIR4BB-yOw6HNtI5MYK3CRuMP59jQi0"] # an array of one or more client registration IDs
+    registration_ids = ["APA91bFlubHjYSfTc0vnt7LOPyOUGiw5s72ZOLfzogViodRRRF6JwSljg2ll3qGk07eHUfESIVUoKqn0O89tpNyoq3K7YgasVggwO6xohcv74cuQGfPZE34XJX_df5aPyS6n9c5cPItlheLjOTD1PzsN9GuWQnN8oA"] # an array of one or more client registration IDs
     options = {
       'data' => {
         'title' => "\ud83d\ude3a Mira esta super Promo",
@@ -110,7 +110,8 @@ class PushSendersController < ApplicationController
     }
 
     response = gcm.send_notification(registration_ids, options)
-
+    puts "#{response}"
+    
     respond_to do |format|
       format.html { redirect_to post_sends_path }
     end
